@@ -19,8 +19,6 @@ RUN set -ex && \
 
 COPY entrypoint.sh /entrypoint.sh
 
-ENV NPS_RUNMODE=pro
-
 EXPOSE 8024 8080
 
 ENTRYPOINT ["/entrypoint.sh"]

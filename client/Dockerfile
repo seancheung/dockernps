@@ -19,4 +19,4 @@ RUN set -ex && \
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["/usr/bin/npc"]
+CMD ["/usr/bin/npc", "-config=/etc/nps/conf/npc.conf"]
