@@ -7,7 +7,7 @@ RUN if [ "$CN_MIRROR" = true ]; then sed -i 's/dl-cdn.alpinelinux.org/mirrors.al
 RUN set -ex && \
     apk add --no-cache bash && \
     apk add --no-cache --virtual TMP curl && \
-    file_url=$(curl -s 'https://api.github.com/repos/cnlh/nps/releases/latest' | grep "browser_download_url.*linux_amd64_client.tar.gz" | cut -d '"' -f 4) && \
+    file_url=$(curl -sL 'https://api.github.com/repos/cnlh/nps/releases/latest' | grep "browser_download_url.*linux_amd64_client.tar.gz" | cut -d '"' -f 4) && \
     curl -sL "$file_url" | tar -xzv -C /tmp && \
     mkdir -p /etc/nps && \
     cp -r /tmp/nps/conf /etc/nps/ && \
